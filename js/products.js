@@ -103,7 +103,49 @@ const products = [
             "img/productos/cañas/marine_gt2.png",
             "img/productos/cañas/marine_gt2_2.png",
         ]
-    }
+    },
+    {
+        id: 9,
+        name: "Señuelo Hook Jerk Minnow 105",
+        price: 12.50,
+        category: "Señuelos",
+        subcategory: "Para rio",
+        description: `
+            Señuelo infalible con colores Matador* , para especies, Róbalo, Corvina, sabalo, dorado, cubo, etc.., ...Especies para mar o río. Disponible en  nuestra tienda, producto orignal y garantizado.`,
+        images: [
+            "img/productos/señuelos/jerk_minnow_110.jpg",
+            "img/productos/señuelos/jerk_minnow_110_2.jpg",
+            "img/productos/señuelos/jerk_minnow_110_3.jpg",
+        ]
+    },
+    {
+        id: 10,
+        name: "Señuelo Daiwa Samurai Jig",
+        price: 7.50,
+        category: "Señuelos",
+        subcategory: "Jigs",
+        description: `
+            'El diseño de su cabeza es más estrecho para acentuar su acción lateral en las animaciones. La parte central se ha adelgazado para mejorar la distancia de lance. Un robusto anzuelo triple equipa el señuelo en la parte trasera y un assist simple equipa la parte delantera del jig.`,
+        images: [
+            "img/productos/señuelos/daiwa_samurai_jig.jpg",
+            "img/productos/señuelos/daiwa_samurai_jig_2.jpeg",
+        ]
+    },
+    {
+        id: 11,
+        name: "Señuelo Hook Edge Minnow 130",
+        price: 12.00,
+        category: "Señuelos",
+        subcategory: "Para rio",
+        description: `
+            'Perfil alargado y aerodinámico, con un babero transparente para el movimiento de natación y ojos 3D.`,
+        images: [
+            "img/productos/señuelos/edge_minnow.jpg",
+            "img/productos/señuelos/edge_minnow_2.jpg",
+            "img/productos/señuelos/edge_minnow_3.jpg",
+            "img/productos/señuelos/edge_minnow_4.jpg",
+        ]
+    },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -113,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!contenedor) return;
 
     // puedes limitar cuantos mostrar
-    const destacados = products.slice(0, 9);
+    const destacados = products.slice(0, 11);
 
     destacados.forEach(product => {
 
