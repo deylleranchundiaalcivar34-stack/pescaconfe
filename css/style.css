@@ -338,6 +338,23 @@ h2 {
 }
 
 
+aside .form-range {
+    cursor: pointer;
+}
+
+aside {
+    position: sticky;
+    top: 100px;
+}
+
+.product-card {
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
 /* ================= SLIDER PREMIUM ================= */
 
 .categorias-wrapper {

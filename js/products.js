@@ -155,8 +155,8 @@ const products = [
         description: `
             'Los señuelos JERK MINNOW 140 Es sin duda una de las mejores minnows del mercado latinoamericano y el mundo. Nuestros señuelos HOOK FISHING TACKLE, viene de acuerdo al modelo y tamaño, con anzuelos VMC y OWNER, más unas argollas planas para mayor resistencia a las batallas con las diferentes especies a capturar.`,
         images: [
-            "img/productos/señuelos/jerk_minnow_140.jpg",
-            "img/productos/señuelos/jerk_minnow_140_2.jpg",
+            "img/productos/señuelos/jer_minnow_140.jpg",
+            "img/productos/señuelos/jer_minnow_140_2.jpg",
         ]
     },
     {
@@ -253,7 +253,6 @@ const products = [
         images: [
             "img/productos/indumentaria/jersey_dorado.jpg",
             "img/productos/indumentaria/jersey_dorado_2.jpg",
-            "img/productos/indumentaria/jerser_dorado_3.jpg",
         ]
     },
     {
@@ -267,7 +266,6 @@ const products = [
         images: [
             "img/productos/indumentaria/jersey_wahoo.jpg",
             "img/productos/indumentaria/jersey_wahoo_2.jpg",
-            "img/productos/indumentaria/jerser_wahoo_3.jpg",
         ]
     },
     {
@@ -281,7 +279,6 @@ const products = [
         images: [
             "img/productos/indumentaria/jersey_cascabel.jpg",
             "img/productos/indumentaria/jersey_cascabel_2.jpg",
-            "img/productos/indumentaria/jerser_cascabel_3.jpg",
         ]
     },
 ];
@@ -293,7 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!contenedor) return;
 
     // puedes limitar cuantos mostrar
-    const destacados = products.slice(0, 11);
+    const destacados = products.slice(0, 21);
 
     destacados.forEach(product => {
 

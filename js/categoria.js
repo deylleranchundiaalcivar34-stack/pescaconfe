@@ -1,7 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 
-const categoria = params.get("cat");
-const subcategoria = params.get("sub");
+const categoria = params.get("cat") || "";
+const subcategoria = params.get("sub") || "";
 
 let productos = [];
 let paginaActual = 1;
@@ -9,38 +9,74 @@ const porPagina = 6;
 
 // ================= INICIO =================
 document.addEventListener("DOMContentLoaded", () => {
-    aplicarFiltros();
+
+    if (typeof products === "undefined") {
+        console.error("❌ products.js no cargado");
+        return;
+    }
+
+    inicializar();
 });
+
+// ================= INICIALIZAR =================
+function inicializar() {
+
+    const priceRange = document.getElementById("priceRange");
+    const priceValue = document.getElementById("priceValue");
+
+    if (priceRange) {
+        priceRange.addEventListener("input", () => {
+            priceValue.innerText = "$" + priceRange.value;
+            aplicarFiltros();
+        });
+    }
+
+    const minInput = document.getElementById("minPrice");
+    const sortInput = document.getElementById("sortPrice");
+
+    if (minInput) minInput.addEventListener("input", aplicarFiltros);
+    if (sortInput) sortInput.addEventListener("change", aplicarFiltros);
+
+    aplicarFiltros();
+}
 
 // ================= FILTRADO BASE =================
 function filtrarBase() {
 
-    let lista = products.filter(p =>
-        p.category.toLowerCase() === categoria.toLowerCase()
-    );
+    if (!Array.isArray(products)) return [];
 
+    let lista = products;
+
+    // 🔥 SOLO filtra si viene categoría
+    if (categoria) {
+        lista = lista.filter(p =>
+            (p.category || "").toLowerCase() === categoria.toLowerCase()
+        );
+    }
+
+    // 🔥 subcategoría solo si existe
     if (subcategoria) {
         lista = lista.filter(p =>
-            p.subcategory.toLowerCase().includes(subcategoria.toLowerCase())
+            (p.subcategory || "").toLowerCase().includes(subcategoria.toLowerCase())
         );
     }
 
     return lista;
 }
 
-// ================= APLICAR TODO =================
+// ================= APLICAR FILTROS =================
 function aplicarFiltros() {
 
     let lista = filtrarBase();
 
     // ===== precio =====
-    const min = parseFloat(document.getElementById("minPrice").value) || 0;
-    const max = parseFloat(document.getElementById("maxPrice").value) || 999999;
+    const min = parseFloat(document.getElementById("minPrice")?.value) || 0;
+    const max = parseFloat(document.getElementById("priceRange")?.value) || 1000;
 
     lista = lista.filter(p => p.price >= min && p.price <= max);
 
     // ===== orden =====
-    const sort = document.getElementById("sortPrice").value;
+    const sort = document.getElementById("sortPrice")?.value || "default";
 
     if (sort === "asc") {
         lista.sort((a, b) => a.price - b.price);
@@ -56,27 +92,38 @@ function aplicarFiltros() {
     render();
     renderPaginacion();
 
-    // título dinámico
+    // ===== título =====
     let titulo = categoria;
 
     if (subcategoria) {
         titulo += " / " + subcategoria;
     }
 
-    document.getElementById("categoria-titulo").innerText =
-        titulo.toUpperCase();
+    const tituloEl = document.getElementById("categoria-titulo");
+    if (tituloEl) {
+        tituloEl.innerText = titulo.toUpperCase();
+    }
 }
 
 // ================= RENDER PRODUCTOS =================
 function render() {
 
     const cont = document.getElementById("productos-categoria");
+    if (!cont) return;
+
     cont.innerHTML = "";
 
     const inicio = (paginaActual - 1) * porPagina;
-    const fin = inicio + porPagina;
+    const pagina = productos.slice(inicio, inicio + porPagina);
 
-    const pagina = productos.slice(inicio, fin);
+    if (pagina.length === 0) {
+        cont.innerHTML = `
+            <div class="col-12 text-center text-muted">
+                No hay productos disponibles
+            </div>
+        `;
+        return;
+    }
 
     pagina.forEach(p => {
 
@@ -108,6 +155,8 @@ function render() {
 function renderPaginacion() {
 
     const cont = document.getElementById("paginacion");
+    if (!cont) return;
+
     cont.innerHTML = "";
 
     const total = Math.ceil(productos.length / porPagina);
@@ -128,8 +177,3 @@ function cambiarPagina(n) {
     render();
     renderPaginacion();
 }
-
-// ================= EVENTO FILTROS =================
-document.getElementById("minPrice").addEventListener("input", aplicarFiltros);
-document.getElementById("maxPrice").addEventListener("input", aplicarFiltros);
-document.getElementById("sortPrice").addEventListener("change", aplicarFiltros);
