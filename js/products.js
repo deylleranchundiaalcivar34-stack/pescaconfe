@@ -109,7 +109,7 @@ const products = [
         name: "Señuelo Hook Jerk Minnow 105",
         price: 12.50,
         category: "Señuelos",
-        subcategory: "Para rio",
+        subcategory: "parario",
         description: `
             Señuelo infalible con colores Matador* , para especies, Róbalo, Corvina, sabalo, dorado, cubo, etc.., ...Especies para mar o río. Disponible en  nuestra tienda, producto orignal y garantizado.`,
         images: [
@@ -136,7 +136,7 @@ const products = [
         name: "Señuelo Hook Edge Minnow 130",
         price: 12.00,
         category: "Señuelos",
-        subcategory: "Para rio",
+        subcategory: "parario",
         description: `
             'Perfil alargado y aerodinámico, con un babero transparente para el movimiento de natación y ojos 3D.`,
         images: [
@@ -144,6 +144,144 @@ const products = [
             "img/productos/señuelos/edge_minnow_2.jpg",
             "img/productos/señuelos/edge_minnow_3.jpg",
             "img/productos/señuelos/edge_minnow_4.jpg",
+        ]
+    },
+    {
+        id: 12,
+        name: "Señuelo Hook Jerk Minnow 140",
+        price: 14.00,
+        category: "Señuelos",
+        subcategory: "paramar",
+        description: `
+            'Los señuelos JERK MINNOW 140 Es sin duda una de las mejores minnows del mercado latinoamericano y el mundo. Nuestros señuelos HOOK FISHING TACKLE, viene de acuerdo al modelo y tamaño, con anzuelos VMC y OWNER, más unas argollas planas para mayor resistencia a las batallas con las diferentes especies a capturar.`,
+        images: [
+            "img/productos/señuelos/jerk_minnow_140.jpg",
+            "img/productos/señuelos/jerk_minnow_140_2.jpg",
+        ]
+    },
+    {
+        id: 13,
+        name: "Señuelo Hook Bunker Jerk 160",
+        price: 14.50,
+        category: "Señuelos",
+        subcategory: "paramar",
+        description: `
+            'Modelo ideal para la pesca de grandes depredadores en agua salada y agua dulce. Su peso, acción y Balines internos, permiten lances muy largos, movimientos erráticos y ataques fuertes.`,
+        images: [
+            "img/productos/señuelos/bunker_jerk_160.jpg",
+        ]
+    },
+    {
+        id: 14,
+        name: "Señuelo Vense Popper Juggernaut 90",
+        price: 16.00,
+        category: "Señuelos",
+        subcategory: "parario",
+        description: `
+            'El popper Juggernaut es un señuelo con una cara de copa especial y un diseño de labios profundos para más ruido bajo el agua y acción saltada.`,
+        images: [
+            "img/productos/señuelos/popper_vense_90.jpg",
+            "img/productos/señuelos/popper_vense_90_1.jpg",
+            "img/productos/señuelos/popper_vense_90_2.jpg",
+            "img/productos/señuelos/popper_vense_90_3.jpg",
+            "img/productos/señuelos/popper_vense_90_4.jpg",
+        ]
+    },
+    {
+        id: 15,
+        name: "Señuelo Spinnerbait Bass Pro Shops Muskie Angler",
+        price: 11.00,
+        category: "Señuelos",
+        subcategory: "parario",
+        description: `
+            'Estos spinners contrarrotativas únicas en su tipo brindan un aspecto y vibración diferentes.`,
+        images: [
+            "img/productos/señuelos/spinnerbait.jpg",
+            "img/productos/señuelos/spinnerbait_2.jpg",
+            "img/productos/señuelos/spinnerbait_3.jpg",
+            "img/productos/señuelos/spinnerbait_4.jpg",
+        ]
+    },
+    {
+        id: 16,
+        name: "Carrete Spinning Shimano Sienna 2000",
+        price: 64.00,
+        category: "Carretes",
+        subcategory: "Spinning",
+        description: `
+            'El SIENNA es un carrete giratorio completo que es popular en todo el mundo. Es una opción ideal para el pescador que recién está comenzando a pescar pero aún quiere pescar con un carrete confiable.`,
+        images: [
+            "img/productos/carretes/shimano.jpg",
+            "img/productos/carretes/shimano_2.jpg",
+        ]
+    },
+    {
+        id: 17,
+        name: "Carrete Spinning Shimano Catana 2500HG",
+        price: 111.00,
+        category: "Carretes",
+        subcategory: "Spinning",
+        description: `
+            'El modelo Catana es desde hace muchos años el carrete de bobina fija más vendido de Shimano en Europa. Y eso no es coincidencia: el Catana es fuerte, sólido y fiable durante años, mientras que el precio es muy competitivo.`,
+        images: [
+            "img/productos/carretes/catana.jpg",
+            "img/productos/carretes/catana_2.jpg",
+        ]
+    },
+    {
+        id: 18,
+        name: "Jersey Explorer Ilustración Marlin",
+        price: 35.00,
+        category: "Indumentaria",
+        subcategory: "Jersey",
+        description: `
+            'Prendas pertenecientes a la EDICIÓN 2024, son elaboradas con materiales de excelente calidad preparadas para utilizarse en los ambientes más extremos con nuestras prendas ergonómicas diseñadas para la prácticas de la pesca.`,
+        images: [
+            "img/productos/indumentaria/jersey_marlin.jpg",
+            "img/productos/indumentaria/jersey_marlin_2.jpg",
+            "img/productos/indumentaria/jerser_marlin_3.jpg",
+        ]
+    },
+    {
+        id: 19,
+        name: "Jersey Explorer Ilustración Dorado",
+        price: 35.00,
+        category: "Indumentaria",
+        subcategory: "Jersey",
+        description: `
+            'Prendas pertenecientes a la EDICIÓN 2024, son elaboradas con materiales de excelente calidad preparadas para utilizarse en los ambientes más extremos con nuestras prendas ergonómicas diseñadas para la prácticas de la pesca.`,
+        images: [
+            "img/productos/indumentaria/jersey_dorado.jpg",
+            "img/productos/indumentaria/jersey_dorado_2.jpg",
+            "img/productos/indumentaria/jerser_dorado_3.jpg",
+        ]
+    },
+    {
+        id: 20,
+        name: "Jersey Explorer Ilustración Wahoo",
+        price: 35.00,
+        category: "Indumentaria",
+        subcategory: "Jersey",
+        description: `
+            'Prendas pertenecientes a la EDICIÓN 2024, son elaboradas con materiales de excelente calidad preparadas para utilizarse en los ambientes más extremos con nuestras prendas ergonómicas diseñadas para la prácticas de la pesca.`,
+        images: [
+            "img/productos/indumentaria/jersey_wahoo.jpg",
+            "img/productos/indumentaria/jersey_wahoo_2.jpg",
+            "img/productos/indumentaria/jerser_wahoo_3.jpg",
+        ]
+    },
+    {
+        id: 21,
+        name: "Jersey Explorer Ilustración Cascabel",
+        price: 35.00,
+        category: "Indumentaria",
+        subcategory: "Jersey",
+        description: `
+            'Prendas pertenecientes a la EDICIÓN 2024, son elaboradas con materiales de excelente calidad preparadas para utilizarse en los ambientes más extremos con nuestras prendas ergonómicas diseñadas para la prácticas de la pesca.`,
+        images: [
+            "img/productos/indumentaria/jersey_cascabel.jpg",
+            "img/productos/indumentaria/jersey_cascabel_2.jpg",
+            "img/productos/indumentaria/jerser_cascabel_3.jpg",
         ]
     },
 ];
