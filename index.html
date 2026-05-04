@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesca Con Fe</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    
+</head>
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="topbar py-2">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+
+        <div class="contact-info">
+        <i class="bi bi-telephone"></i> 098 496 7946 / 093 992 7826
+        <span class="ms-3"><i class="bi bi-envelope"></i> pescaconfe@gmail.com</span>
+        </div>
+
+        <div class="social-icons">
+        <a href="https://www.facebook.com/pescaconfe1" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/pesca_con_fe" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.tiktok.com/@pescaconfe1" target="_blank"><i class="bi bi-tiktok"></i></a>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow sticky-top">
+    <div class="container">
+
+    <!-- LOGO -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/banners/LOGO_BLANCO.png" width="125" class="me-1">
+    </a>
+
+    <button class="navbar-toggler" type="button"
+data-bs-toggle="collapse"
+data-bs-target="#menu"
+aria-controls="menu"
+aria-expanded="false"
+aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+    <div class="collapse navbar-collapse" id="menu">
+
+        <ul class="navbar-nav ms-auto">
+
+        <!-- CARRETES -->
+        <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" role="button">Carretes</a>
+            <div class="dropdown-menu mega-menu p-4">
+            <div class="row">
+                <div class="col-md-3">
+                <a href="categorias.html?cat=carretes&sub=spinning" class="dropdown-item">Spinning</a>
+                <a href="categorias.html?cat=carretes&sub=casting" class="dropdown-item">Casting</a>
+                <a href="categorias.html?cat=carretes&sub=casting" class="dropdown-item">Convencional</a>
+                </div>
+            </div>
+            </div>
+        </li>
+
+        <!-- CAÑAS -->
+        <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" role="button">Cañas</a>
+            <div class="dropdown-menu mega-menu p-4">
+            <div class="row">
+                <div class="col-md-3">
+                <a href="categorias.html?cat=cañas&sub=popping" class="dropdown-item">Popping</a>
+                <a href="categorias.html?cat=cañas&sub=spinning" class="dropdown-item">Spinning</a>
+                <a href="categorias.html?cat=cañas&sub=casting" class="dropdown-item">Casting</a>
+                <a href="categorias.html?cat=cañas&sub=trolling" class="dropdown-item">Trolling</a>
+                </div>
+            </div>
+            </div>
+        </li>
+
+        <!-- SEÑUELOS -->
+        <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" role="button">Señuelos</a>
+            <div class="dropdown-menu mega-menu p-4">
+            <div class="row">
+                <div class="col-md-3">
+                <a href="categorias.html?cat=señuelos&sub=parario" class="dropdown-item">Para Río</a>
+                <a href="categorias.html?cat=señuelos&sub=paramar" class="dropdown-item">Para Mar</a>
+                <a href="categorias.html?cat=señuelos&sub=jigs" class="dropdown-item">Jigs</a>
+                </div>
+            </div>
+            </div>
+        </li>
+
+        <!-- INDUMENTARIA -->
+        <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" role="button">Indumentaria</a>
+            <div class="dropdown-menu mega-menu p-4">
+            <div class="row">
+                <div class="col-md-3">
+                <a href="categorias.html?cat=indumentaria&sub=jersey" class="dropdown-item">Jersey</a>
+                <a href="categorias.html?cat=indumentaria&sub=pantalones" class="dropdown-item">Pantalones</a>
+                <a href="categorias.html?cat=indumentaria&sub=buff" class="dropdown-item">Buff</a>
+                <a href="categorias.html?cat=indumentaria&sub=mascaras" class="dropdown-item">Máscaras</a>
+                </div>
+            </div>
+            </div>
+        </li>
+
+        </ul>
+
+            <!-- BUSCADOR -->
+    <form class="d-flex me-3" role="search" onsubmit="buscarProducto(event)">
+        <input 
+            id="search-input"
+            class="form-control form-control-sm me-2" 
+            type="search" 
+            placeholder="Buscar producto..."
+        >
+        <button class="btn btn-outline-primary btn-sm" type="submit">
+            <i class="bi bi-search"></i>
+        </button>
+    </form>
+
+              <!-- CARRITO -->
+        <button class="btn position-relative cart-btn"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#carrito"
+        aria-controls="carrito">
+
+        <i class="bi bi-cart fs-5 text-dark"></i>
+
+        <!-- CONTADOR -->
+        <span id="cart-count"
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+
+        </button>
+
+    </div>
+    </div>
+    </nav>
+
+    <div id="carouselE1" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselE1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselE1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselE1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="img/banners/bg1.png" class="d-block w-100">
+                <div class="carousel-caption custom-caption">
+                    <h1>Pesca Profesional</h1>
+                    <p>Equipamiento premium para verdaderos pescadores deportivos.</p>
+                    <a href="categorias.html" class="btn btn-primary mt-3">Ver Productos</a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="img/banners/bg2.png" class="d-block w-100">
+                <div class="carousel-caption custom-caption">
+                    <h1>Cañas de Pescar</h1>
+                    <p>Calidad que se siente en cada lanzamiento.</p>
+                    <a href="categorias.html?cat=cañas" class="btn btn-primary mt-3">Explorar</a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="img/banners/bg3.png" class="d-block w-100">
+                <div class="carousel-caption custom-caption">
+                    <h1>La aventura comienza con el primer lance</h1>
+                    <p>Más que pesca, es pasión</p>
+                    <a href="categorias.html?cat=señuelos" class="btn btn-primary mt-3">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<section class="container mt-5">
+
+    <h2 class="text-center mb-4">Categorías</h2>
+
+    <p class="text-center mb-5">
+        Descubre nuestra amplia selección de artículos para todos los tipos de pesca.
+    </p>
+
+    <div class="row g-4 categorias-grid">
+
+        <!-- CAÑAS -->
+        <div class="col-12 col-md-6 col-lg-6">
+            <a href="categorias.html?cat=cañas" class="cat-box cat-canas">   
+            </a>
+        </div>
+
+        <!-- CARRETES -->
+        <div class="col-12 col-md-6 col-lg-6">
+            <a href="categorias.html?cat=carretes" class="cat-box cat-carretes">
+            </a>
+        </div>
+
+        <!-- SEÑUELOS -->
+        <div class="col-12 col-md-6 col-lg-6">
+            <a href="categorias.html?cat=señuelos" class="cat-box cat-senuelos">
+            </a>
+        </div>
+
+        <!-- INDUMENTARIA -->
+        <div class="col-12 col-md-6 col-lg-6">
+            <a href="categorias.html?cat=indumentaria" class="cat-box cat-ropa">
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= BANNER ================= -->
+<section class="banner text-white text-center mt-5 p-5"> 
+    <h2>Trabajamos con las mejores marcas del mercado</h2> 
+    <p>Encuentra tus marcas favoritas aquí</p>
+    <p>Envíos a todo Ecuador</p> 
+    <a href="https://wa.me/593984967946" class="btn btn-primary mt-3">Escribenos por WhatsApp</a>
+</section>
+
+<!-- ================= PRODUCTOS DESTACADOS ================= -->
+<section class="container my-5">
+
+    <h2 class="text-center mb-4">Productos Destacados</h2>
+
+    <div class="row g-4" id="productos-destacados">
+        <!-- JS va a cargar aquí los productos -->
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="categorias.html" class="btn btn-primary px-4">
+            Ver catálogo completo
+        </a>
+    </div>
+
+</section>
+
+<section class="container my-5">
+
+    <h2 class="text-center mb-4">Novedades</h2>
+    <p class="text-center mb-4">
+        Disponibles en Pesca Con Fe 🎣🔥
+    </p>
+
+    <div id="carouselNovedades" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- INDICADORES -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselNovedades" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselNovedades" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselNovedades" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <a href="https://www.instagram.com/reel/DU1BT0jDzwo/" target="_blank">
+                    <img src="img/banners/bg5.png" class="d-block w-100" >
+                </a>
+            </div>
+
+            <div class="carousel-item">
+                <a href="https://www.instagram.com/reel/DU3hR4_jTPz/" target="_blank">
+                    <img src="img/banners/bg6.png" class="d-block w-100">
+                </a>
+            </div>
+
+            <div class="carousel-item">
+                <a href="https://www.instagram.com/reel/DVGf47eDU19/" target="_blank">
+                    <img src="img/banners/bg7.png" class="d-block w-100">
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="container my-5">
+
+    <h2 class="text-center mb-4">Síguenos en Instagram</h2>
+
+    <p class="text-center mb-4">
+        Mira nuestras últimas publicaciones y novedades en tiempo real
+    </p>
+
+    <!-- INSTAGRAM FEED -->
+    <div class="instagram-feed">
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-f21e7139-6110-4bda-8eab-16682a1f05f5" data-elfsight-app-lazy></div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="https://www.instagram.com/pesca_con_fe" target="_blank"
+           class="btn btn-dark px-4">
+            Ver perfil completo
+        </a>
+    </div>
+
+</section>
+<!-- ================= ICONOS ================= -->
+<section class="section-icons">
+    <div class="container">
+        <br>
+        <br>
+        <div class="row text-center">
+
+            <div class="col-md-4">
+                <i class="bi bi-truck fs-1"></i>
+                <h3>Envío Seguro</h3>
+                <p>Entrega confiable en todo el país.</p>
+                <br>
+            </div>
+
+            <div class="col-md-4">
+                <i class="bi bi-shield-check fs-1"></i>
+                <h3>Garantía</h3>
+                <p>Productos 100% garantizados.</p>
+                <br>
+            </div>
+
+            <div class="col-md-4">
+                <i class="bi bi-star fs-1"></i>
+                <h3>Calidad</h3>
+                <p>Seleccionamos lo mejor para ti.</p>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h3>Contacto</h3>
+                        <p><span>📞</span> 093 992 7826 / 098 496 7946</p>
+                        <p><span>📧</span> pescaconfe@gmail.com</p>
+                            <div class="social-icons">
+                            <a href="https://www.facebook.com/pescaconfe1" target="_blank"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/pesca_con_fe" target="_blank"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@pescaconfe1" target="_blank"><i class="bi bi-tiktok"></i></a>
+                            </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Horario</h3>
+                        <p>Lunes a Sábado</p>
+                        <p>08:30 AM - 06:00 PM</p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Ubicación</h3>
+                        <p>
+                            Mega Mercado Municipal <br>
+                            Local N° 145 - Planta Alta <br>
+                        </p>
+                        <p>
+                            Shushufindi, Ecuador
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.796934267353!2d-76.6376178!3d-0.1875974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d7f138f2bf2a27%3A0x76c7ed6cdb45a227!2sStore%20Fishing%20%26%20Camping%20Pesca%20Con%20Fe!5e0!3m2!1ses!2sec!4v1777759277714!5m2!1ses!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Store Fishing & Camping - Pesca Con Fe.</p>
+            <p>Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+
+    <div class="container categorias-wrapper">
+        <div class="splide" id="categorias-slider">
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    new Splide('#categorias-slider', {
+        type: 'slide',
+        perPage: 3,
+        perMove: 1,
+        focus: 'center',   // 👈 CLAVE (tipo Netflix/Amazon)
+        gap: '25px',
+        pagination: false,
+        arrows: false,
+        drag: true,
+        autoplay: true,
+        interval: 3000,    // 👈 autoplay suave
+        pauseOnHover: true,
+        speed: 800,        // 👈 transición más premium
+        trimSpace: false,
+
+        breakpoints: {
+            992: { perPage: 2 },
+            576: { perPage: 1 }
+        }
+    }).mount();
+
+});
+</script>
+</div>
+</div>
+
+
+
+<!-- ================= CARRITO OFFCANVAS ================= -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="carrito">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Tu Carrito</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+
+    <!-- Contenedor dinámico -->
+    <div id="cart-items"></div>
+
+    <hr>
+
+    <h6>Tipo de entrega</h6>
+
+    <div class="mb-2">
+        <input type="radio" name="envio" value="retiro" checked> Retiro (Gratis)<br>
+        <input type="radio" name="envio" value="envio"> Envío
+    </div>
+
+    <hr>
+
+    <div id="cart-items-offcanvas"></div>
+
+<h5>Subtotal: $<span id="cart-subtotal">0</span></h5>
+<h6>Envío: $<span id="envio">0</span></h6>
+<h5>Total: $<span id="cart-total">0</span></h5>
+
+    <a href="carrito.html" class="btn btn-success w-100 mt-3">
+      Ir al carrito
+    </a>
+
+  </div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+// ================= BASE DE DATOS =================
+const products = [
+    {
+        id: 1,
+        name: "Carrete Spinning Penn Battle IV 5000",
+        price: 190.00,
+        category: "Carretes",
+        subcategory: "Spinning",
+        images: [
+            "img/productos/carretes/penn_battle_iv_5000.jpg",
+            "img/productos/carretes/penn_battle_iv_5000_2.jpg",
+            "img/productos/carretes/penn_battle_iv_5000_3.png"
+        ]
+    },
+    {
+        id: 2,
+        name: "Carrete Spinning Okuma Cedros 8000",
+        price: 198.00,
+        category: "Carretes",
+        subcategory: "Spinning",
+        images: [
+            "img/productos/carretes/okuma_cedros_8000.png",
+            "img/productos/carretes/okuma_cedros_8000_2.png",
+            "img/productos/carretes/okuma_cedros_8000_3.png",
+            "img/productos/carretes/okuma_cedros_8000_4.png"
+        ]
+    },
+    {
+        id: 3,
+        name: "Carrete Spinning Penn Battle III DX 3000",
+        price: 180.00,
+        category: "Carretes",
+        subcategory: "Spinning",
+        images: [
+            "img/productos/carretes/penn_battle_iii_dx_3000.jpg",
+            "img/productos/carretes/penn_battle_iii_dx_3000_2.jpg",
+            "img/productos/carretes/penn_battle_iii_dx_3000_3.jpg"
+        ]
+    },
+    {
+        id: 4,
+        name: "Carrete Spinning Rapala Shadow 6000",
+        price: 48.00,
+        category: "Carretes",
+        subcategory: "Spinning",
+        images: [
+            "img/productos/carretes/rapala_shdow_6000.png",
+            "img/productos/carretes/rapala_shdow_6000_2.png",
+            "img/productos/carretes/rapala_shdow_6000_3.png"
+        ]
+    },
+    {
+        id: 5,
+        name: "Carrete Casting Marine Caster Power Plus",
+        price: 120.00,
+        category: "Carretes",
+        subcategory: "Casting",
+        images: [
+            "img/productos/carretes/marine_caster_power_plus.jpg",
+            "img/productos/carretes/marine_caster_power_plus_2.png",
+            "img/productos/carretes/marine_caster_power_plus_3.png"
+        ]
+    },
+    {
+        id: 6,
+        name: "Caña Trolling Penn Mariner III (80-200lb)",
+        price: 110.00,
+        category: "Cañas",
+        subcategory: "Trolling",
+        description: `
+            Caña diseñada para trolling de alta resistencia, ideal para pesca en mar abierto.
+            Fabricada con materiales reforzados para máxima durabilidad.`,
+        additionalInfo: {
+            largo: ["1.60 mts", "1.83 mts", "1.95 mts", "2.13 mts"],
+            libras: ["10-20 LBS", "15-30 LBS", "20-40 LBS"],
+            material: "Carbono reforzado",
+            accion: "Media - Pesada"
+        },
+        images: [
+            "img/productos/cañas/penn_mariner_iii.png",
+            "img/productos/cañas/penn_mariner_iii_2.png",
+            "img/productos/cañas/penn_mariner_iii_3.png"
+        ]
+    },
+    {
+        id: 7,
+        name: "Caña Popping Metaloid Bahía",
+        price: 148.00,
+        category: "Cañas",
+        subcategory: "Popping",
+        images: [
+            "img/productos/cañas/metaloid_bahia.png",
+            "img/productos/cañas/metaloid_bahia_2.png",
+        ]
+    },
+    {
+        id: 8,
+        name: "Caña Casting Marine Evolution GT2",
+        price: 97.50,
+        category: "Cañas",
+        subcategory: "Casting",
+        images: [
+            "img/productos/cañas/marine_gt2.png",
+            "img/productos/cañas/marine_gt2_2.png",
+        ]
+    }
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const contenedor = document.getElementById("productos-destacados");
+
+    if (!contenedor) return;
+
+    // puedes limitar cuantos mostrar
+    const destacados = products.slice(0, 9);
+
+    destacados.forEach(product => {
+
+        contenedor.innerHTML += `
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="product-card">
+
+                <div class="product-img">
+                    <img src="${product.images ? product.images[0] : product.img}" alt="">
+                    
+                    <button class="add-cart">
+                        <i class="bi bi-cart-plus"></i>
+                    </button>
+                </div>
+
+                <div class="product-info">
+                    <span class="category">${product.category}</span>
+                    <h5>${product.name}</h5>
+                    <p class="price">$${product.price.toFixed(2)}</p>
+
+                    <a href="producto.html?id=${product.id}" 
+                       class="btn btn-outline-primary btn-sm">
+                        Ver producto
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        `;
+    });
+
+    // 🔥 IMPORTANTE: reactivar botones carrito
+    setTimeout(() => {
+    activarBotonesCarrito();
+}, 100);
+
+});
+
+
+
+
+
+// ================= BUSCADOR =================
+function buscarProducto(e) {
+    e.preventDefault();
+
+    const input = document.getElementById("search-input").value.toLowerCase().trim();
+
+    if (!input) return;
+
+    // 🔥 ahora buscamos varios resultados
+    const resultados = products.filter(p =>
+        p.name.toLowerCase().includes(input)
+    );
+
+    // guardar resultados en localStorage
+    localStorage.setItem("busqueda", JSON.stringify(resultados));
+    localStorage.setItem("query", input);
+
+    // redirigir a página de resultados
+    window.location.href = "busqueda.html";
+}
+
+function getProductImage(product) {
+    if (product.images && product.images.length > 0) {
+        return product.images[0];
+    }
+    return product.img || "img/default.png";
+}
+
+const breadcrumb = document.getElementById("breadcrumb");
+
+if (breadcrumb && productoActual) {
+    breadcrumb.innerHTML = `
+        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+        <li class="breadcrumb-item">${productoActual.category}</li>
+        <li class="breadcrumb-item active">${productoActual.name}</li>
+    `;
+}

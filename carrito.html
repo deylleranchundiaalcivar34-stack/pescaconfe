@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesca Con Fe</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    
+</head>
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="topbar py-2">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+
+        <div class="contact-info">
+        <i class="bi bi-telephone"></i> 098 496 7946 / 093 992 7826
+        <span class="ms-3"><i class="bi bi-envelope"></i> pescaconfe@gmail.com</span>
+        </div>
+
+        <div class="social-icons">
+        <a href="https://www.facebook.com/pescaconfe1" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/pesca_con_fe" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.tiktok.com/@pescaconfe1" target="_blank"><i class="bi bi-tiktok"></i></a>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow sticky-top">
+    <div class="container">
+
+    <!-- LOGO -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/banners/LOGO_BLANCO.png" width="125" class="me-1">
+    </a>
+
+    <button class="navbar-toggler" type="button"
+data-bs-toggle="collapse"
+data-bs-target="#menu"
+aria-controls="menu"
+aria-expanded="false"
+aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+    <div class="collapse navbar-collapse" id="menu">
+
+        <ul class="navbar-nav ms-auto">
+
+        <!-- CARRETES -->
+        <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" role="button">Carretes</a>
+            <div class="dropdown-menu mega-menu p-4">
+            <div class="row">
+                <div class="col-md-3">
+                <a href="categorias.html?cat=carretes&sub=spinning" class="dropdown-item">Spinning</a>
+                <a href="categorias.html?cat=carretes&sub=casting" class="dropdown-item">Casting</a>
+                <a href="categorias.html?cat=carretes&sub=casting" class="dropdown-item">Convencional</a>
+                </div>
+            </div>
+            </div>
+        </li>
+
+        <!-- CAÑAS -->
+        <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" role="button">Cañas</a>
+            <div class="dropdown-menu mega-menu p-4">
+            <div class="row">
+                <div class="col-md-3">
+                <a href="categorias.html?cat=cañas&sub=popping" class="dropdown-item">Popping</a>
+                <a href="categorias.html?cat=cañas&sub=spinning" class="dropdown-item">Spinning</a>
+                <a href="categorias.html?cat=cañas&sub=casting" class="dropdown-item">Casting</a>
+                <a href="categorias.html?cat=cañas&sub=trolling" class="dropdown-item">Trolling</a>
+                </div>
+            </div>
+            </div>
+        </li>
+
+        <!-- SEÑUELOS -->
+        <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" role="button">Señuelos</a>
+            <div class="dropdown-menu mega-menu p-4">
+            <div class="row">
+                <div class="col-md-3">
+                <a href="categorias.html?cat=señuelos&sub=parario" class="dropdown-item">Para Río</a>
+                <a href="categorias.html?cat=señuelos&sub=paramar" class="dropdown-item">Para Mar</a>
+                <a href="categorias.html?cat=señuelos&sub=jigs" class="dropdown-item">Jigs</a>
+                </div>
+            </div>
+            </div>
+        </li>
+
+        <!-- INDUMENTARIA -->
+        <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" role="button">Indumentaria</a>
+            <div class="dropdown-menu mega-menu p-4">
+            <div class="row">
+                <div class="col-md-3">
+                <a href="categorias.html?cat=indumentaria&sub=jersey" class="dropdown-item">Jersey</a>
+                <a href="categorias.html?cat=indumentaria&sub=pantalones" class="dropdown-item">Pantalones</a>
+                <a href="categorias.html?cat=indumentaria&sub=buff" class="dropdown-item">Buff</a>
+                <a href="categorias.html?cat=indumentaria&sub=mascaras" class="dropdown-item">Máscaras</a>
+                </div>
+            </div>
+            </div>
+        </li>
+
+        </ul>
+
+            <!-- BUSCADOR -->
+    <form class="d-flex me-3" role="search" onsubmit="buscarProducto(event)">
+        <input 
+            id="search-input"
+            class="form-control form-control-sm me-2" 
+            type="search" 
+            placeholder="Buscar producto..."
+        >
+        <button class="btn btn-outline-primary btn-sm" type="submit">
+            <i class="bi bi-search"></i>
+        </button>
+    </form>
+
+              <!-- CARRITO -->
+        <button class="btn position-relative cart-btn"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#carrito"
+        aria-controls="carrito">
+
+        <i class="bi bi-cart fs-5 text-dark"></i>
+
+        <!-- CONTADOR -->
+        <span id="cart-count"
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+
+        </button>
+
+    </div>
+    </div>
+    </nav>
+
+    <!-- ================= BREADCRUMB ================= -->
+<br>
+    <div class="container mt-3">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+            <li class="breadcrumb-item active" id="breadcrumb-carrito">Carrito</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="container my-5">
+
+    <h2 class="text-center mb-4">Tu Carrito</h2>
+
+    <div class="row">
+
+        <!-- PRODUCTOS -->
+        <div class="col-md-8">
+            <div id="cart-items"></div>
+        </div>
+
+        <!-- RESUMEN -->
+        <div class="col-md-4">
+
+            <div class="card p-4 shadow">
+
+                <!-- ENVÍO -->
+                <h5>Tipo de entrega</h5>
+
+                <div class="mb-3">
+                    <input type="radio" name="envio" value="retiro" checked> Retiro en local (Gratis)<br>
+                    <input type="radio" name="envio" value="envio"> Envío por Servientrega
+                </div>
+
+                <small class="text-muted">
+                Costo: $6.50 (carretes) / $8.50 (cañas)<br>
+                Envíos a Galápagos se coordinan por WhatsApp
+                </small>
+
+                <hr>
+
+                <!-- CLIENTE -->
+                <h5>Datos del cliente</h5>
+
+                <input type="text" id="nombre" class="form-control mb-2" placeholder="Nombres completos">
+                <input type="text" id="cedula" class="form-control mb-2" placeholder="Cédula">
+                <input type="text" id="telefono" class="form-control mb-2" placeholder="Celular">
+                <input type="text" id="provincia" class="form-control mb-2" placeholder="Provincia">
+                <input type="text" id="direccion" class="form-control mb-3" placeholder="Dirección">
+
+                <hr>
+
+                <!-- PAGO -->
+                <h5>Información de pago</h5>
+
+                <div class="alert alert-primary">
+                Banco Pichincha<br>
+                Cuenta: 2208394961<br>
+                Nombre: Deyller Miguel Anchundia Alcivar<br>
+                CI: 2100948740
+                </div>
+
+                <p class="text-muted">
+                Adjunta el comprobante por WhatsApp después de enviar el pedido.
+                </p>
+
+                <hr>
+
+                <!-- RESUMEN TOTAL -->
+                <div class="d-flex justify-content-between">
+                    <span>Envío:</span>
+                    <strong>$<span id="envio">0</span></strong>
+                </div>
+
+                <div class="d-flex justify-content-between mt-2">
+                    <span>Total:</span>
+                    <h4>$<span id="cart-total">0</span></h4>
+                </div>
+
+                <!-- BOTÓN -->
+                <button class="btn btn-success w-100 mt-3" onclick="abrirModal()">
+                    Enviar pedido por WhatsApp
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/cart.js"></script>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+
+function validarCedula(cedula) {
+
+    if (!/^\d{10}$/.test(cedula)) return false;
+
+    const provincia = parseInt(cedula.substring(0, 2));
+    const tercerDigito = parseInt(cedula[2]);
+
+    if (provincia < 1 || provincia > 24) return false;
+    if (tercerDigito >= 6) return false;
+
+    let suma = 0;
+
+    for (let i = 0; i < 9; i++) {
+
+        let num = parseInt(cedula[i]);
+
+        if (i % 2 === 0) {
+            num *= 2;
+            if (num > 9) num -= 9;
+        }
+
+        suma += num;
+    }
+
+    const decena = Math.ceil(suma / 10) * 10;
+    const digitoValidador = decena - suma === 10 ? 0 : decena - suma;
+
+    return digitoValidador === parseInt(cedula[9]);
+}
+
+let datosPedido = null;
+
+// ABRIR MODAL
+function abrirModal() {
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const cedula = document.getElementById("cedula").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const provincia = document.getElementById("provincia").value.trim();
+    const direccion = document.getElementById("direccion").value.trim();
+
+    const metodoEnvio = document.querySelector('input[name="envio"]:checked').value;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (!nombre || !cedula || !telefono || !provincia || !direccion) {
+    mostrarError("Completa todos los campos");
+    return;
+    }
+
+    if (!validarCedula(cedula)) {
+        mostrarError("Cédula inválida: Solo se acepta cédulas ecuatorianas");
+        return;
+    }
+
+    if (cart.length === 0) {
+        mostrarError("El carrito está vacío");
+        return;
+    }
+
+
+    datosPedido = { nombre, cedula, telefono, provincia, direccion, metodoEnvio };
+
+    const modal = new bootstrap.Modal(document.getElementById('pedidoModal'));
+    modal.show();
+}
+
+// CONFIRMAR PEDIDO
+function confirmarPedido() {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let envio = 0;
+    let tipoEnvio = "Retiro en local";
+
+    if (datosPedido.metodoEnvio === "envio") {
+        let tieneCaña = cart.some(p => p.name.toLowerCase().includes("caña"));
+        envio = tieneCaña ? 8.50 : 6.50;
+        tipoEnvio = "Envío por Servientrega";
+    }
+
+    const subtotal = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+    const total = subtotal + envio;
+
+    let mensaje = "*Pedido Pesca Con Fe*%0A%0A";
+
+    cart.forEach(item => {
+
+        const subtotalItem = item.price * item.qty;
+
+        mensaje += `• ${item.name}%0A`;
+        mensaje += `   ${item.qty} x $${item.price} = $${subtotalItem.toFixed(2)}%0A`;
+
+    });
+
+    mensaje += `%0ASubtotal: $${subtotal.toFixed(2)}%0A`;
+    mensaje += `Envío: $${envio.toFixed(2)}%0A`;
+    mensaje += `Total: $${total.toFixed(2)}%0A%0A`;
+
+    mensaje += `Tipo: ${tipoEnvio}%0A`;
+    mensaje += `Nombre: ${datosPedido.nombre}%0A`;
+    mensaje += `Cédula: ${datosPedido.cedula}%0A`;
+    mensaje += `Celular: ${datosPedido.telefono}%0A`;
+    mensaje += `Provincia: ${datosPedido.provincia}%0A`;
+    mensaje += `Dirección: ${datosPedido.direccion}%0A%0A`;
+
+    mensaje += "Enviaré el comprobante de pago.";
+
+    const modalElement = document.getElementById('pedidoModal');
+    const modal = bootstrap.Modal.getInstance(modalElement);
+    modal.hide();
+
+    // animación botón principal
+    const btn = document.querySelector(".btn-success.w-100.mt-3");
+
+    btn.innerHTML = "Enviando...";
+    btn.disabled = true;
+
+    setTimeout(() => {
+        btn.innerHTML = "✅ Pedido enviado";
+    }, 1000);
+
+    setTimeout(() => {
+        window.open(`https://wa.me/593984967946?text=${mensaje}`, "_blank");
+        localStorage.removeItem("cart");
+    }, 1200);
+}
+
+// ERROR BONITO
+function mostrarError(msg) {
+
+    const html = `
+    <div class="modal fade" id="errorModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <h5 class="text-danger">${msg}</h5>
+                <button class="btn btn-dark mt-3" data-bs-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+    `;
+
+    document.body.insertAdjacentHTML("beforeend", html);
+
+    const modal = new bootstrap.Modal(document.getElementById('errorModal'));
+    modal.show();
+}
+
+</script>
+
+<!-- MODAL -->
+<div class="modal fade" id="pedidoModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <h4>¿Confirmar pedido?</h4>
+      <p class="text-muted">Se enviará por WhatsApp</p>
+
+      <button class="btn btn-success w-100 mb-2" onclick="confirmarPedido()">
+        Sí, enviar pedido
+      </button>
+
+      <button class="btn btn-outline-secondary w-100" data-bs-dismiss="modal">
+        Cancelar
+      </button>
+
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/breadcrumb.js"></script>
+
+</body>
+
+
+<!-- ================= ICONOS ================= -->
+<section class="section-icons">
+    <div class="container">
+        <br>
+        <br>
+        <div class="row text-center">
+
+            <div class="col-md-4">
+                <i class="bi bi-truck fs-1"></i>
+                <h3>Envío Seguro</h3>
+                <p>Entrega confiable en todo el país.</p>
+                <br>
+            </div>
+
+            <div class="col-md-4">
+                <i class="bi bi-shield-check fs-1"></i>
+                <h3>Garantía</h3>
+                <p>Productos 100% garantizados.</p>
+                <br>
+            </div>
+
+            <div class="col-md-4">
+                <i class="bi bi-star fs-1"></i>
+                <h3>Calidad</h3>
+                <p>Seleccionamos lo mejor para ti.</p>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    
+                    <div class="footer-section">
+                        <h3>Contacto</h3>
+                        <p><span>📞</span> 093 992 7826 / 098 496 7946</p>
+                        <p><span>📧</span> pescaconfe@gmail.com</p>
+                            <div class="social-icons">
+                            <a href="https://www.facebook.com/pescaconfe1" target="_blank"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/pesca_con_fe" target="_blank"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@pescaconfe1" target="_blank"><i class="bi bi-tiktok"></i></a>
+                            </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Horario</h3>
+                        <p>Lunes a Sábado</p>
+                        <p>08:30 AM - 06:00 PM</p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Ubicación</h3>
+                        <p>
+                            Mega Mercado Municipal <br>
+                            Local N° 145 - Planta Alta <br>
+                        </p>
+                        <p>
+                            Shushufindi, Ecuador
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.796934267353!2d-76.6376178!3d-0.1875974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d7f138f2bf2a27%3A0x76c7ed6cdb45a227!2sStore%20Fishing%20%26%20Camping%20Pesca%20Con%20Fe!5e0!3m2!1ses!2sec!4v1777759277714!5m2!1ses!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Store Fishing & Camping - Pesca Con Fe.</p>
+            <p>Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</html>

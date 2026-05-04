@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesca Con Fe</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    
+</head>
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="topbar py-2">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+
+        <div class="contact-info">
+        <i class="bi bi-telephone"></i> 098 496 7946 / 093 992 7826
+        <span class="ms-3"><i class="bi bi-envelope"></i> pescaconfe@gmail.com</span>
+        </div>
+
+        <div class="social-icons">
+        <a href="https://www.facebook.com/pescaconfe1" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/pesca_con_fe" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.tiktok.com/@pescaconfe1" target="_blank"><i class="bi bi-tiktok"></i></a>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow sticky-top">
+    <div class="container">
+
+    <!-- LOGO -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/banners/LOGO_BLANCO.png" width="125" class="me-1">
+    </a>
+
+    <button class="navbar-toggler" type="button"
+data-bs-toggle="collapse"
+data-bs-target="#menu"
+aria-controls="menu"
+aria-expanded="false"
+aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+    <div class="collapse navbar-collapse" id="menu">
+
+        <ul class="navbar-nav ms-auto">
+
+        <!-- CARRETES -->
+        <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" role="button">Carretes</a>
+            <div class="dropdown-menu mega-menu p-4">
+            <div class="row">
+                <div class="col-md-3">
+                <a href="categorias.html?cat=carretes&sub=spinning" class="dropdown-item">Spinning</a>
+                <a href="categorias.html?cat=carretes&sub=casting" class="dropdown-item">Casting</a>
+                <a href="categorias.html?cat=carretes&sub=casting" class="dropdown-item">Convencional</a>
+                </div>
+            </div>
+            </div>
+        </li>
+
+        <!-- CAÑAS -->
+        <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" role="button">Cañas</a>
+            <div class="dropdown-menu mega-menu p-4">
+            <div class="row">
+                <div class="col-md-3">
+                <a href="categorias.html?cat=cañas&sub=popping" class="dropdown-item">Popping</a>
+                <a href="categorias.html?cat=cañas&sub=spinning" class="dropdown-item">Spinning</a>
+                <a href="categorias.html?cat=cañas&sub=casting" class="dropdown-item">Casting</a>
+                <a href="categorias.html?cat=cañas&sub=trolling" class="dropdown-item">Trolling</a>
+                </div>
+            </div>
+            </div>
+        </li>
+
+        <!-- SEÑUELOS -->
+        <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" role="button">Señuelos</a>
+            <div class="dropdown-menu mega-menu p-4">
+            <div class="row">
+                <div class="col-md-3">
+                <a href="categorias.html?cat=señuelos&sub=parario" class="dropdown-item">Para Río</a>
+                <a href="categorias.html?cat=señuelos&sub=paramar" class="dropdown-item">Para Mar</a>
+                <a href="categorias.html?cat=señuelos&sub=jigs" class="dropdown-item">Jigs</a>
+                </div>
+            </div>
+            </div>
+        </li>
+
+        <!-- INDUMENTARIA -->
+        <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" role="button">Indumentaria</a>
+            <div class="dropdown-menu mega-menu p-4">
+            <div class="row">
+                <div class="col-md-3">
+                <a href="categorias.html?cat=indumentaria&sub=jersey" class="dropdown-item">Jersey</a>
+                <a href="categorias.html?cat=indumentaria&sub=pantalones" class="dropdown-item">Pantalones</a>
+                <a href="categorias.html?cat=indumentaria&sub=buff" class="dropdown-item">Buff</a>
+                <a href="categorias.html?cat=indumentaria&sub=mascaras" class="dropdown-item">Máscaras</a>
+                </div>
+            </div>
+            </div>
+        </li>
+
+        </ul>
+
+            <!-- BUSCADOR -->
+    <form class="d-flex me-3" role="search" onsubmit="buscarProducto(event)">
+        <input 
+            id="search-input"
+            class="form-control form-control-sm me-2" 
+            type="search" 
+            placeholder="Buscar producto..."
+        >
+        <button class="btn btn-outline-primary btn-sm" type="submit">
+            <i class="bi bi-search"></i>
+        </button>
+    </form>
+
+              <!-- CARRITO -->
+        <button class="btn position-relative cart-btn"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#carrito"
+        aria-controls="carrito">
+
+        <i class="bi bi-cart fs-5 text-dark"></i>
+
+        <!-- CONTADOR -->
+        <span id="cart-count"
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+
+        </button>
+
+    </div>
+    </div>
+    </nav>
+
+<!-- ================= BREADCRUMB ================= -->
+<div class="container mt-3">
+    <nav>
+        <ol class="breadcrumb" id="breadcrumb"></ol>
+    </nav>
+</div>
+
+<!-- ================= PRODUCTO ================= -->
+<div class="container my-5">
+
+    <div class="row">
+
+        <!-- IMAGEN -->
+        <div class="mb-3">
+
+    <!-- IMAGEN PRINCIPAL -->
+    <!-- CONTENEDOR ZOOM -->
+<div class="img-zoom-container mb-3 position-relative">
+
+    <img id="producto-img"
+         class="img-fluid rounded shadow w-100"
+         style="max-height: 450px; object-fit: contain;">
+
+    <!-- LUPA -->
+    <div id="zoom-lens"></div>
+
+</div>
+</div>
+
+<!-- MINI GALERÍA -->
+<div id="galeria"
+     class="d-flex gap-2 justify-content-center flex-wrap mt-2">
+</div>
+
+        <!-- INFO -->
+        <div class="col-md-6">
+
+            <h2 id="producto-nombre"></h2>
+
+            <p class="text-muted" id="producto-categoria"></p>
+
+            <h3 class="text-success my-3">$<span id="producto-precio"></span></h3>
+
+            <p>
+                Producto de alta calidad ideal para pescadores exigentes.
+                Disponible en Pesca Con Fe.
+            </p>
+
+            <!-- CANTIDAD -->
+            <div class="d-flex align-items-center mb-3">
+                <button class="btn btn-outline-secondary" onclick="cambiarCantidad(-1)">-</button>
+                <span id="cantidad" class="mx-3">1</span>
+                <button class="btn btn-outline-secondary" onclick="cambiarCantidad(1)">+</button>
+            </div>
+
+            <!-- BOTÓN -->
+            <button class="btn btn-primary w-100" onclick="agregarAlCarrito()">
+                <i class="bi bi-cart-plus"></i> Agregar al carrito
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= TABS ================= -->
+<div class="container mt-5">
+
+    <ul class="nav nav-tabs" id="productoTabs">
+        <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#descripcion">
+                DESCRIPCIÓN
+            </button>
+        </li>
+
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#info">
+                INFORMACIÓN ADICIONAL
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content p-3 border border-top-0">
+
+        <!-- DESCRIPCIÓN -->
+        <div class="tab-pane fade show active" id="descripcion">
+            <p id="producto-descripcion"></p>
+        </div>
+
+        <!-- INFO ADICIONAL -->
+        <div class="tab-pane fade" id="info">
+            <table class="table table-sm">
+                <tbody id="tabla-info"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CARRITO OFFCANVAS ================= -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="carrito">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Tu Carrito</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+
+    <!-- Contenedor dinámico -->
+    <div id="cart-items"></div>
+
+    <hr>
+
+    <h6>Tipo de entrega</h6>
+
+    <div class="mb-2">
+        <input type="radio" name="envio" value="retiro" checked> Retiro (Gratis)<br>
+        <input type="radio" name="envio" value="envio"> Envío
+    </div>
+
+    <hr>
+
+    <div id="cart-items-offcanvas"></div>
+
+<h5>Subtotal: $<span id="cart-subtotal">0</span></h5>
+<h6>Envío: $<span id="envio">0</span></h6>
+<h5>Total: $<span id="cart-total">0</span></h5>
+
+    <a href="carrito.html" class="btn btn-success w-100 mt-3">
+      Ir al carrito
+    </a>
+
+  </div>
+</div>
+
+<section class="container my-5">
+
+    <h3 class="mb-4">Productos relacionados</h3>
+
+    <div class="row g-4" id="relacionados">
+        <!-- JS -->
+    </div>
+
+</section>
+
+<!-- ================= SCRIPTS ================= -->
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const savedEnvio = localStorage.getItem("tipoEnvio");
+
+    if (savedEnvio) {
+        const radio = document.querySelector(`input[name="envio"][value="${savedEnvio}"]`);
+        if (radio) radio.checked = true;
+    }
+
+    // cuando cambie en producto.html
+    document.querySelectorAll("input[name='envio']").forEach(radio => {
+        radio.addEventListener("change", () => {
+            localStorage.setItem("tipoEnvio", radio.value);
+
+            // opcional: actualizar carrito en vivo si está abierto
+            if (typeof renderCart === "function") renderCart();
+        });
+    });
+
+});
+</script>
+
+<script>
+let productoActual = null;
+let cantidad = 1;
+
+// ================= CANTIDAD =================
+function cambiarCantidad(valor) {
+    cantidad += valor;
+    if (cantidad < 1) cantidad = 1;
+    document.getElementById("cantidad").innerText = cantidad;
+}
+
+// ================= CAMBIAR IMAGEN =================
+function cambiarImagen(src) {
+    document.getElementById("producto-img").src = src;
+}
+
+// ================= TOAST =================
+function mostrarToast(msg) {
+    const toast = document.createElement("div");
+    toast.className = "position-fixed bottom-0 end-0 m-3 p-3 bg-success text-white rounded shadow";
+    toast.style.zIndex = 9999;
+    toast.innerHTML = `<i class="bi bi-check-circle"></i> ${msg}`;
+    document.body.appendChild(toast);
+
+    setTimeout(() => toast.remove(), 2000);
+}
+
+// ================= AGREGAR AL CARRITO =================
+function agregarAlCarrito() {
+    if (!productoActual) return;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existing = cart.find(p => p.name === productoActual.name);
+
+    if (existing) {
+        existing.qty += cantidad;
+    } else {
+        cart.push({
+            name: productoActual.name,
+            price: productoActual.price,
+            img: productoActual.images?.[0] || productoActual.img,
+            qty: cantidad
+        });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    cantidad = 1;
+    document.getElementById("cantidad").innerText = 1;
+
+    if (typeof syncCartUI === "function") syncCartUI();
+    if (typeof renderCart === "function") renderCart();
+
+    mostrarToast("Agregado al carrito 🛒");
+}
+
+// ================= INICIALIZAR PRODUCTO =================
+document.addEventListener("DOMContentLoaded", () => {
+
+    const params = new URLSearchParams(window.location.search);
+    const id = Number(params.get("id"));
+
+    if (!Array.isArray(products)) {
+        console.error("❌ products no cargó");
+        return;
+    }
+
+    productoActual = products.find(p => p.id === id);
+
+    if (!productoActual) return;
+
+    // INFO
+    document.getElementById("producto-nombre").innerText = productoActual.name;
+    document.getElementById("producto-precio").innerText = productoActual.price.toFixed(2);
+    document.getElementById("producto-categoria").innerText = productoActual.category;
+
+    // IMAGENES
+    const mainImg = document.getElementById("producto-img");
+    const galeria = document.getElementById("galeria");
+
+    const imagenes = productoActual.images || [productoActual.img];
+
+    mainImg.src = imagenes[0];
+
+    galeria.innerHTML = "";
+
+    imagenes.forEach(img => {
+        galeria.innerHTML += `
+            <img src="${img}"
+            style="width:80px;height:80px;object-fit:cover;cursor:pointer"
+            onclick="cambiarImagen('${img}')">
+        `;
+    });
+
+    // DESCRIPCION
+    document.getElementById("producto-descripcion").innerText =
+        productoActual.description || "Sin descripción";
+
+    // ================= RELACIONADOS (FIX REAL) =================
+    const cont = document.getElementById("relacionados");
+
+    if (cont) {
+
+        const relacionados = products.filter(p =>
+            p.category === productoActual.category && p.id !== productoActual.id
+        );
+
+        cont.innerHTML = "";
+
+        relacionados.slice(0, 4).forEach(p => {
+
+            const img = p.images?.[0] || p.img;
+
+            cont.innerHTML += `
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="product-card">
+
+                    <div class="product-img">
+                        <img src="${img}">
+                        <button class="add-cart" data-id="${p.id}">
+                            <i class="bi bi-cart-plus"></i>
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <span>${p.category}</span>
+                        <h6>${p.name}</h6>
+                        <p>$${p.price.toFixed(2)}</p>
+
+                        <a href="producto.html?id=${p.id}" class="btn btn-outline-primary btn-sm">
+                            Ver
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            `;
+        });
+
+        if (typeof activarBotonesCarrito === "function") {
+            setTimeout(activarBotonesCarrito, 100);
+        }
+    }
+
+    // ================= BREADCRUMB FIX =================
+    const breadcrumb = document.getElementById("breadcrumb");
+
+    if (breadcrumb) {
+        breadcrumb.innerHTML = `
+            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+            <li class="breadcrumb-item">${productoActual.category}</li>
+            <li class="breadcrumb-item active">${productoActual.name}</li>
+        `;
+    }
+});
+
+function agregarAlCarrito() {
+
+    if (!productoActual) return;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existing = cart.find(p => p.name === productoActual.name);
+
+    if (existing) {
+        existing.qty += cantidad;
+    } else {
+        cart.push({
+            name: productoActual.name,
+            price: productoActual.price,
+            img: productoActual.images ? productoActual.images[0] : productoActual.img,
+            qty: cantidad
+        });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    cantidad = 1;
+    document.getElementById("cantidad").innerText = cantidad;
+
+    // ================= MENSAJE RÁPIDO =================
+const msg = document.createElement("div");
+msg.innerText = "Producto agregado al carrito 🛒";
+
+msg.style.position = "fixed";
+msg.style.bottom = "20px";
+msg.style.right = "20px";
+msg.style.background = "#28a745";
+msg.style.color = "white";
+msg.style.padding = "12px 18px";
+msg.style.borderRadius = "8px";
+msg.style.zIndex = "99999";
+msg.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
+msg.style.fontSize = "14px";
+
+document.body.appendChild(msg);
+
+setTimeout(() => {
+    msg.remove();
+}, 2000);
+}
+
+
+</script>
+
+</body>
+
+
+<!-- ================= ICONOS ================= -->
+<section class="section-icons">
+    <div class="container">
+        <br>
+        <br>
+        <div class="row text-center">
+
+            <div class="col-md-4">
+                <i class="bi bi-truck fs-1"></i>
+                <h3>Envío Seguro</h3>
+                <p>Entrega confiable en todo el país.</p>
+                <br>
+            </div>
+
+            <div class="col-md-4">
+                <i class="bi bi-shield-check fs-1"></i>
+                <h3>Garantía</h3>
+                <p>Productos 100% garantizados.</p>
+                <br>
+            </div>
+
+            <div class="col-md-4">
+                <i class="bi bi-star fs-1"></i>
+                <h3>Calidad</h3>
+                <p>Seleccionamos lo mejor para ti.</p>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h3>Contacto</h3>
+                        <p><span>📞</span> 093 992 7826 / 098 496 7946</p>
+                        <p><span>📧</span> pescaconfe@gmail.com</p>
+                            <div class="social-icons">
+                            <a href="https://www.facebook.com/pescaconfe1" target="_blank"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/pesca_con_fe" target="_blank"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@pescaconfe1" target="_blank"><i class="bi bi-tiktok"></i></a>
+                            </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Horario</h3>
+                        <p>Lunes a Sábado</p>
+                        <p>08:30 AM - 06:00 PM</p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Ubicación</h3>
+                        <p>
+                            Mega Mercado Municipal <br>
+                            Local N° 145 - Planta Alta <br>
+                        </p>
+                        <p>
+                            Shushufindi, Ecuador
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.796934267353!2d-76.6376178!3d-0.1875974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d7f138f2bf2a27%3A0x76c7ed6cdb45a227!2sStore%20Fishing%20%26%20Camping%20Pesca%20Con%20Fe!5e0!3m2!1ses!2sec!4v1777759277714!5m2!1ses!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Store Fishing & Camping - Pesca Con Fe.</p>
+            <p>Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</html>
